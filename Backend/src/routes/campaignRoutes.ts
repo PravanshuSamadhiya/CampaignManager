@@ -1,0 +1,13 @@
+import express from "express";
+import { createCampaign, deleteCampaign, getCampaign, getCampaignById, updateCampaign } from "../controllers/campaignController";
+
+
+const router = express.Router();
+
+router.get("/", getCampaign);
+router.get("/:id", getCampaignById);
+router.post("/", createCampaign);
+router.put("/:id", updateCampaign);
+router.delete("/:id", deleteCampaign);
+
+export default router;
