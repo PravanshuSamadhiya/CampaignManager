@@ -10,7 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Campaign } from "@/types/campaign";
 
 
-const API_URL = "http://localhost:3000/campaigns";
+const API_URL = "https://campaignmanager-hbra.onrender.com";
 
 const Dashboard = () => {
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
@@ -79,7 +79,7 @@ const Dashboard = () => {
     }
   
     // ✅ Optional: Make DELETE API call
-    fetch(`http://localhost:3000/campaigns/${campaignToDelete.id}`, {
+    fetch(`https://campaignmanager-hbra.onrender.com/campaigns/${campaignToDelete.id}`, {
       method: "DELETE",
     })
       .then(() => {
