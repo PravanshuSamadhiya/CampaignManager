@@ -27,7 +27,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchCampaigns = async () => {
       try {
-        const response = await fetch(API_URL);
+        const response = await fetch("https://campaignmanager-hbra.onrender.com/campaigns");
         const data = await response.json();
         const mappedCampaigns = data
           .filter((campaign: any) => campaign.status !== "DELETED")
@@ -77,8 +77,7 @@ const Dashboard = () => {
       console.log("No campaign selected for deletion");
       return;
     }
-  
-    // ✅ Optional: Make DELETE API call
+
     fetch(`https://campaignmanager-hbra.onrender.com/campaigns/${campaignToDelete.id}`, {
       method: "DELETE",
     })
