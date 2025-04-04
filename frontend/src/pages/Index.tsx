@@ -10,7 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Campaign } from "@/types/campaign";
 
 
-const API_URL = "https://campaignmanager-hbra.onrender.com";
+const API_URL = "https://campaignmanager-hbra.onrender.com/campaigns";
 
 const Dashboard = () => {
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
@@ -27,7 +27,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchCampaigns = async () => {
       try {
-        const response = await fetch("https://campaignmanager-hbra.onrender.com/campaigns");
+        const response = await fetch(API_URL);
         const data = await response.json();
         const mappedCampaigns = data
           .filter((campaign: any) => campaign.status !== "DELETED")
@@ -78,7 +78,7 @@ const Dashboard = () => {
       return;
     }
 
-    fetch(`https://campaignmanager-hbra.onrender.com/campaigns/${campaignToDelete.id}`, {
+    fetch(`${API_URL}/${campaignToDelete.id}`, {
       method: "DELETE",
     })
       .then(() => {
