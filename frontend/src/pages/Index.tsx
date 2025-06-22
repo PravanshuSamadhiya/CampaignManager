@@ -10,7 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Campaign } from "@/types/campaign";
 
 
-const API_URL = "https://campaignmanager-hbra.onrender.com/campaigns";
+const API_URL = "https://campaignmanagerapp.vercel.app/campaigns";
 
 const Dashboard = () => {
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);

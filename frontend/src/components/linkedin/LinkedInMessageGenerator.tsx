@@ -19,7 +19,7 @@ const LinkedInMessageGenerator = () => {
     setGeneratedMessage("");
 
     try {
-      const response = await fetch("https://campaignmanager-hbra.onrender.com/messages/personalized-message", {
+      const response = await fetch("https://campaignmanagerapp.vercel.app/messages/personalized-message", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
